@@ -8,20 +8,21 @@ const projects = [
 
 function selectItem() {
     for (i = 0; i < projects.length; i++) {
-        //text field data setting
-        document.display.pno.value = projects[i].pno;
-        document.display.pname.value = projects[i].pname;
-        document.display.pdesc.value = projects[i].pdesc;
-        break;
+        if (document.list.dispChk[i].checked) {
+            //text field data setting
+            document.display.pno.value = projects[i].pno;
+            document.display.pname.value = projects[i].pname;
+            document.display.pdesc.value = projects[i].pdesc;
+            break;
+        }
     }
 }
-
 
 function displayData() {
     for (i = 0; i < projects.length; i++) {
         document.write("<tr>");
-        document.write(``);
-        document.write(``);
-        document.write("</tr");
+        document.write("<td bgcolor=#dfdfff align=center><input type='radio' name='dispChk' onClick='selectItem()'></td>");
+        document.write("<td bgcolor=#FDFDFF>" + projects[i].pname + "</td>");
+        document.write("</tr>");
     }
 }

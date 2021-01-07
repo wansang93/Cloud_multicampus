@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>jQuery Example</h1>
+    <a href="http://jquery.com/">jQuery</a>
+
+    <!-- <script>
+        $(document).ready(function () {
+            $("a").click(function (event) {
+                alert("Thanks for visiting!");
+            });
+        });
+    </script> -->
+    <script>
+        $(document).ready(function () {
+            $("a").click(function (event) {
+                alert("As you can see, the link no longer took you to jquery.com");
+                event.preventDefault();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="src/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <title>to Todo</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            background-color: #f6f6f8
+        }
+
+        input {
+            width: 200px
+        }
+
+        button,
+        input {
+            border-style: groove
+        }
+
+        .shadow {
+            box-shadow: 5px 10px 10px rgba(0, 0, 0, .03)
+        }
+    </style>
+    <style type="text/css">
+        h1[data-v-3a22cb32] {
+            color: #2f3b52;
+            font-weight: 900;
+            margin: 2.5rem 0 1.5rem
+        }
+    </style>
+    <style type="text/css">
+        input[data-v-54a6d7c7]:focus {
+            outline: none
+        }
+
+        .inputBox[data-v-54a6d7c7] {
+            background: #fff;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 5px
+        }
+
+        .inputBox input[data-v-54a6d7c7] {
+            border-style: none;
+            font-size: .9rem
+        }
+
+        .addContainer[data-v-54a6d7c7] {
+            float: right;
+            background: linear-gradient(90deg, #6478fb, #8763fb);
+            display: inline-block;
+            width: 3rem;
+            border-radius: 0 5px 5px 0
+        }
+
+        .addBtn[data-v-54a6d7c7] {
+            color: #fff;
+            vertical-align: middle
+        }
+    </style>
+    <style type="text/css">
+        ul[data-v-255a00dc] {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+            text-align: left
+        }
+
+        li[data-v-255a00dc] {
+            display: flex;
+            min-height: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin: .5rem 0;
+            padding: 0 .9rem;
+            background: #fff;
+            border-radius: 5px
+        }
+
+        .checkBtn[data-v-255a00dc] {
+            line-height: 45px;
+            color: #62acde;
+            margin-right: 5px
+        }
+
+        .removeBtn[data-v-255a00dc] {
+            margin-left: auto;
+            color: #de4343
+        }
+
+        .list-item[data-v-255a00dc] {
+            display: inline-block;
+            margin-right: 10px
+        }
+
+        .list-move[data-v-255a00dc] {
+            transition: transform 1s
+        }
+
+        .list-enter-active[data-v-255a00dc],
+        .list-leave-active[data-v-255a00dc] {
+            transition: all 1s
+        }
+
+        .list-enter[data-v-255a00dc],
+        .list-leave-to[data-v-255a00dc] {
+            opacity: 0;
+            transform: translateY(30px)
+        }
+    </style>
+    <style type="text/css">
+        .clearAllContainer[data-v-207efa8c] {
+            width: 8.5rem;
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 0 auto
+        }
+
+        .clearAllBtn[data-v-207efa8c] {
+            color: #e20303;
+            display: block
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.990.0" data-gr-ext-installed="" class="vsc-initialized">
+    <div id="app">
+        <header data-v-3a22cb32="">
+            <h1 data-v-3a22cb32="">TODO it!</h1>
+        </header>
+        <div data-v-54a6d7c7="" class="inputBox shadow"><input data-v-54a6d7c7="" type="text"
+                placeholder="Type what you have to do"> <span data-v-54a6d7c7="" class="addContainer"><i
+                    data-v-54a6d7c7="" aria-hidden="true" class="addBtn fa fa-plus"></i></span>
+        </div>
+        <section data-v-255a00dc="">
+            <ul data-v-255a00dc=""></ul>
+        </section>
+        <div data-v-207efa8c="" class="clearAllContainer">
+            <span data-v-207efa8c="" class="clearAllBtn">Clear All</span>
+        </div>
+    </div>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
