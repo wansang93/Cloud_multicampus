@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project list</title>
+    <script language="javascript" src="./js/projectSelect.js"></script>
+</head>
+
+<body>
+    <h1>Project List</h1>
+    <table>
+        <form name="list">
+            <tr>
+                <th>선택</th>
+                <th>프로젝트</th>
+            </tr>
+            <script lang="javascript">
+                displayData();
+            </script>
+        </form>
+    </table>
+    <table>
+        <form name="display">
+            <tr>
+                <td><b>프로젝트 번호</b></td>
+                <td>
+                    <input type="text" name="pno" size="48" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td><b>프로젝트 이름</b></td>
+                <td>
+                    <input type="text" name="pname" size="48" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td><b>프로젝트 설명</b></td>
+                <td>
+                    <textarea name="pdesc" rows="5" cols="50" readonly></textarea>
+                </td>
+            </tr>
+        </form>
+    </table>
+
+</body>
+
+</html>
