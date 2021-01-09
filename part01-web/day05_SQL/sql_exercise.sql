@@ -18,149 +18,189 @@
 **/
 
 
--- ºÎ¼­¹øÈ£°¡ 10¹øÀÎ ºÎ¼­ÀÇ »ç¶÷ Áß »ç¿ø¹øÈ£, ÀÌ¸§, ¿ù±ÞÀ» Ãâ·ÂÇÏ¶ó
-SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "NAME", SALARY
+-- ë¶€ì„œë²ˆí˜¸ê°€ 10ë²ˆì¸ ë¶€ì„œì˜ ì‚¬ëžŒ ì¤‘ ì‚¬ì›ë²ˆí˜¸, ì´ë¦„, ì›”ê¸‰ì„ ì¶œë ¥í•˜ë¼
+SELECT
+CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "NAME",
+SALARY
 FROM EMPLOYEES
 WHERE DEPARTMENT_ID = 10;
 
 
--- »ç¿ø¹øÈ£°¡ 7369ÀÎ »ç¶÷ Áß ÀÌ¸§, ÀÔ»çÀÏ, ºÎ¼­ ¹øÈ£¸¦ Ãâ·ÂÇÏ¶ó.
-SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "NAME", HIRE_DATE, DEPARTMENT_ID
+-- ì‚¬ì›ë²ˆí˜¸ê°€ 7369ì¸ ì‚¬ëžŒ ì¤‘ ì´ë¦„, ìž…ì‚¬ì¼, ë¶€ì„œ ë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ë¼.
+SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "NAME",
+HIRE_DATE, DEPARTMENT_ID
 FROM EMPLOYEES e
 WHERE EMPLOYEE_ID = 7369;
 
 
--- ÀÌ¸§ÀÌ EllenÀÎ »ç¶÷ÀÇ ¸ðµç Á¤º¸¸¦ Ãâ·ÂÇÏ¶ó.
+-- ì´ë¦„ì´ Ellenì¸ ì‚¬ëžŒì˜ ëª¨ë“  ì •ë³´ë¥¼ ì¶œë ¥í•˜ë¼.
 SELECT *
 FROM EMPLOYEES e 
 WHERE FIRST_NAME = 'Ellen';
 
 
--- ÀÔ»çÀÏÀÌ 08/04/21ÀÎ »ç¿øÀÇ ÀÌ¸§, ºÎ¼­¹øÈ£, ¿ù±ÞÀ» Ãâ·ÂÇÏ¶ó.
-SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "NAME", DEPARTMENT_ID, SALARY 
+-- ìž…ì‚¬ì¼ì´ 08/04/21ì¸ ì‚¬ì›ì˜ ì´ë¦„, ë¶€ì„œë²ˆí˜¸, ì›”ê¸‰ì„ ì¶œë ¥í•˜ë¼.
+SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "NAME",
+ DEPARTMENT_ID, SALARY 
 FROM EMPLOYEES e 
 WHERE HIRE_DATE >= '20080421';
 
 
--- Á÷¹«°¡ SA_MAN ¾Æ´Ñ »ç¶÷ÀÇ ¸ðµç Á¤º¸¸¦ Ãâ·ÂÇÏ¶ó.
+-- ì§ë¬´ê°€ SA_MAN ì•„ë‹Œ ì‚¬ëžŒì˜ ëª¨ë“  ì •ë³´ë¥¼ ì¶œë ¥í•˜ë¼.
 SELECT * 
 FROM EMPLOYEES e
 WHERE JOB_ID != 'SA_MAN';
 
 
--- ÀÔ»çÀÏÀÌ 08/04/21 ÀÌÈÄ¿¡ ÀÔ»çÇÑ »ç¿øÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ¶ó.
+-- ìž…ì‚¬ì¼ì´ 08/04/21 ì´í›„ì— ìž…ì‚¬í•œ ì‚¬ì›ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ë¼.
 SELECT *
 FROM EMPLOYEES e 
 WHERE HIRE_DATE > '20080421';
 
 
--- ºÎ¼­¹øÈ£¿Í 20,30¹øÀ» Á¦¿ÜÇÑ ¸ðµç »ç¶÷ÀÇ ÀÌ¸§, »ç¿ø¹øÈ£, ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ¶ó.
+-- ë¶€ì„œë²ˆí˜¸ì™€ 20,30ë²ˆì„ ì œì™¸í•œ ëª¨ë“  ì‚¬ëžŒì˜ ì´ë¦„, ì‚¬ì›ë²ˆí˜¸, ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ë¼.
 SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", EMPLOYEE_ID, DEPARTMENT_ID
 FROM EMPLOYEES e 
 WHERE DEPARTMENT_ID != 20 AND DEPARTMENT_ID != 30;
 
 
--- ÀÌ¸§ÀÌ S·Î ½ÃÀÛÇÏ´Â »ç¿øÀÇ »ç¿ø¹øÈ£, ÀÌ¸§, ÀÔ»çÀÏ, ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ¶ó.
+-- ì´ë¦„ì´ Së¡œ ì‹œìž‘í•˜ëŠ” ì‚¬ì›ì˜ ì‚¬ì›ë²ˆí˜¸, ì´ë¦„, ìž…ì‚¬ì¼, ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ë¼.
 SELECT EMPLOYEE_ID, CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", HIRE_DATE, DEPARTMENT_ID
 FROM EMPLOYEES e 
-WHERE UPPER(FIRST_NAME)  LIKE 'S%'
+WHERE UPPER(FIRST_NAME)  LIKE 'S%';
 
 
---ÀÌ¸§ÀÌ s·Î ½ÃÀÛÇÏ°í ¸¶Áö¸· ±ÛÀÚ°¡ tÀÎ »ç¶÷ÀÌ Á¤º¸¸¦ Ãâ·ÂÇÏ¶ó.
+--ì´ë¦„ì´ së¡œ ì‹œìž‘í•˜ê³  ë§ˆì§€ë§‰ ê¸€ìžê°€ tì¸ ì‚¬ëžŒì´ ì •ë³´ë¥¼ ì¶œë ¥í•˜ë¼.
 SELECT *
 FROM EMPLOYEES e 
-WHERE UPPER(FIRST_NAME) LIKE 'S%T'
+WHERE UPPER(FIRST_NAME) LIKE 'S%T';
 
 
--- employees Å×ÀÌºí¿¡¼­ ÀÌ¸§, ±Þ¿©, »ó¿©, ÃÑ¾×À» ±¸ÇÏ¿© ÃÑ¾× ¸¹Àº ¼ø¼­·Î Ãâ·ÂÇÏ¶ó ´Ü »ó¿©±ÝÀÌ NULLÀÎ »ç¶÷Àº Á¦¿Ü
+-- employees í…Œì´ë¸”ì—ì„œ ì´ë¦„, ê¸‰ì—¬, ìƒì—¬, ì´ì•¡ì„ êµ¬í•˜ì—¬ ì´ì•¡ ë§Žì€ ìˆœì„œë¡œ ì¶œë ¥í•˜ë¼ ë‹¨ ìƒì—¬ê¸ˆì´ NULLì¸ ì‚¬ëžŒì€ ì œì™¸
 SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", SALARY, COMMISSION_PCT, SALARY+(COMMISSION_PCT*SALARY) "TOTAL" 
 FROM EMPLOYEES e 
-WHERE COMMISSION_PCT IS NOT NULL
+WHERE COMMISSION_PCT IS NOT NULL;
 
 
--- 10¹ø ºÎ¼­ÀÇ ¸ðµç »ç¶÷µé¿¡°Ô ±Þ¿©ÀÇ 13%¸¦ º¸³Ê½º·Î ÁöºÒÇÏ±â·Î ÇÏ¿´´Ù. ÀÌ¸§, ±Þ¿©, º¸³Ê½º±Ý¾×, ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ¶ó.
+-- 10ë²ˆ ë¶€ì„œì˜ ëª¨ë“  ì‚¬ëžŒë“¤ì—ê²Œ ê¸‰ì—¬ì˜ 13%ë¥¼ ë³´ë„ˆìŠ¤ë¡œ ì§€ë¶ˆí•˜ê¸°ë¡œ í•˜ì˜€ë‹¤. ì´ë¦„, ê¸‰ì—¬, ë³´ë„ˆìŠ¤ê¸ˆì•¡, ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ë¼.
 SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", SALARY, (SALARY*13/100) "BONUS", DEPARTMENT_ID
 FROM EMPLOYEES e 
-WHERE DEPARTMENT_ID = 10
+WHERE DEPARTMENT_ID = 10;
 
 
 /**
--- 30¹ø ºÎ¼­ÀÇ ¿¬ºÀÀ» °è»êÇÏ¿© ÀÌ¸§, ºÎ¼­¹øÈ£, ±Þ¿©, ¿¬ºÀÀ» Ãâ·ÂÇÏ¶ó. ´Ü ¿¬¸»¿¡ ±Þ¿©ÀÇ 150%¸¦ º¸³Ê½º·Î Áö±ÞÇÑ´Ù.
--- ¿¬ºÀ = sal*12+(sal*1.5)
+-- 30ë²ˆ ë¶€ì„œì˜ ì—°ë´‰ì„ ê³„ì‚°í•˜ì—¬ ì´ë¦„, ë¶€ì„œë²ˆí˜¸, ê¸‰ì—¬, ì—°ë´‰ì„ ì¶œë ¥í•˜ë¼. ë‹¨ ì—°ë§ì— ê¸‰ì—¬ì˜ 150%ë¥¼ ë³´ë„ˆìŠ¤ë¡œ ì§€ê¸‰í•œë‹¤.
+-- ì—°ë´‰ = sal*12+(sal*1.5)
 **/
 SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", DEPARTMENT_ID , SALARY, SALARY*12+SALARY*1.5 "ANNUAL_SALARY"
 FROM EMPLOYEES e 
-WHERE DEPARTMENT_ID = 30
+WHERE DEPARTMENT_ID = 30;
 
 
 /**
--- ºÎ¼­¹øÈ£°¡ 20ÀÎ ºÎ¼­ÀÇ ½Ã°£´ç ÀÓ±ÝÀ» °è»êÇÏ¿© Ãâ·ÂÇÏ¶ó. ´Ü 1´ÞÀÇ ±Ù¹«ÀÏ¼ö´Â 12ÀÏÀÌ°í 1ÀÏ ±Ù¹«½Ã°£Àº 5½Ã°£ÀÌ´Ù.
--- Ãâ·Â¾ç½ÄÀº ÀÌ¸§, ±Þ¿©, ½Ã°£´ç ÀÓ±Ý(¼Ò¼öÀÌÇÏ 1¹øÂ° ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²)À» Ãâ·ÂÇÏ¶ó.
--- ½Ã±Þ = sal/ÀÏ¼ö/½Ã°£  -> sal/12/5 
--- round(m, n) mÀ» ¼Ò¼öÁ¡ nÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²
+-- ë¶€ì„œë²ˆí˜¸ê°€ 20ì¸ ë¶€ì„œì˜ ì‹œê°„ë‹¹ ìž„ê¸ˆì„ ê³„ì‚°í•˜ì—¬ ì¶œë ¥í•˜ë¼. ë‹¨ 1ë‹¬ì˜ ê·¼ë¬´ì¼ìˆ˜ëŠ” 12ì¼ì´ê³  1ì¼ ê·¼ë¬´ì‹œê°„ì€ 5ì‹œê°„ì´ë‹¤.
+-- ì¶œë ¥ì–‘ì‹ì€ ì´ë¦„, ê¸‰ì—¬, ì‹œê°„ë‹¹ ìž„ê¸ˆ(ì†Œìˆ˜ì´í•˜ 1ë²ˆì§¸ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼)ì„ ì¶œë ¥í•˜ë¼.
+-- ì‹œê¸‰ = sal/ì¼ìˆ˜/ì‹œê°„  -> sal/12/5 
+-- round(m, n) mì„ ì†Œìˆ˜ì  nìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼
 **/
 SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", SALARY, ROUND(SALARY/12/5, 1) "HOURLY" 
 FROM EMPLOYEES e 
-WHERE DEPARTMENT_ID = 20
+WHERE DEPARTMENT_ID = 20;
 
 
 /**
--- ±Þ¿©°¡ 1500ºÎÅÍ 3000»çÀÌÀÇ »ç¶÷Àº ±Þ¿©ÀÇ 5%¸¦ È¸ºñ·Î ÁöºÒÇÏ±â·Î ÇÏ¿´´Ù. ÀÌ¸¦ ÀÌ¸§, ±Þ¿©, È¸ºñ(-2ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²)¸¦ Ãâ·ÂÇÏ¶ó.
--- È¸ºñ  = sal * 0.05	
--- -2ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸² : Á¤¼ö 2¹øÂ° ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸².. 100´ÜÀ§·Î  
+-- ê¸‰ì—¬ê°€ 1500ë¶€í„° 3000ì‚¬ì´ì˜ ì‚¬ëžŒì€ ê¸‰ì—¬ì˜ 5%ë¥¼ íšŒë¹„ë¡œ ì§€ë¶ˆí•˜ê¸°ë¡œ í•˜ì˜€ë‹¤. ì´ë¥¼ ì´ë¦„, ê¸‰ì—¬, íšŒë¹„(-2ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼)ë¥¼ ì¶œë ¥í•˜ë¼.
+-- íšŒë¹„  = sal * 0.05	
+-- -2ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼ : ì •ìˆ˜ 2ë²ˆì§¸ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼.. 100ë‹¨ìœ„ë¡œ  
 **/
 SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", SALARY, ROUND(SALARY*0.05, -2) "MEMBERSHIP_DUES"
 FROM EMPLOYEES e 
-WHERE SALARY >= 1500 AND SALARY <= 3000
+WHERE SALARY >= 1500 AND SALARY <= 3000;
 
 
 /**
-ÀÔ»çÀÏºÎÅÍ Áö±Ý±îÁöÀÇ ³¯Â¥¼ö¸¦ Ãâ·ÂÇÏ¶ó. ºÎ¼­¹øÈ£, ÀÌ¸§, ÀÔ»çÀÏ, ÇöÀçÀÏ, ±Ù¹«ÀÏ¼ö(¼Ò¼öÁ¡ÀÌÇÏÀý»è), ±Ù¹«³â¼ö,
-±Ù¹«¿ù¼ö(30ÀÏ ±âÁØ)¸¦ Ãâ·ÂÇÏ¶ó.
-Áö±Ý ³¯Â¥ : sysdate 
-±Ù¹« ÀÏ¼ö : ÇöÀç³¯Â¥ - ÀÔ»çÀÏ = sysdate - hire_date  -> ³¯Â¥ - ³¯Â¥ : ÀÏ¼ö ³ª¿È
-±Ù¹« ³â¼ö : to_char(sysdate,'YYYY')-to_char(hiredate,'YYYY')
-±Ù¹« ¿ù¼ö : ±Ù¹«ÀÏ¼ö / 1´Þ(30ÀÏ)
+ìž…ì‚¬ì¼ë¶€í„° ì§€ê¸ˆê¹Œì§€ì˜ ë‚ ì§œìˆ˜ë¥¼ ì¶œë ¥í•˜ë¼. ë¶€ì„œë²ˆí˜¸, ì´ë¦„, ìž…ì‚¬ì¼, í˜„ìž¬ì¼, ê·¼ë¬´ì¼ìˆ˜(ì†Œìˆ˜ì ì´í•˜ì ˆì‚­), ê·¼ë¬´ë…„ìˆ˜,
+ê·¼ë¬´ì›”ìˆ˜(30ì¼ ê¸°ì¤€)ë¥¼ ì¶œë ¥í•˜ë¼.
+ì§€ê¸ˆ ë‚ ì§œ : sysdate 
+ê·¼ë¬´ ì¼ìˆ˜ : í˜„ìž¬ë‚ ì§œ - ìž…ì‚¬ì¼ = sysdate - hire_date  -> ë‚ ì§œ - ë‚ ì§œ : ì¼ìˆ˜ ë‚˜ì˜´
+ê·¼ë¬´ ë…„ìˆ˜ : to_char(sysdate,'YYYY')-to_char(hiredate,'YYYY')
+ê·¼ë¬´ ì›”ìˆ˜ : ê·¼ë¬´ì¼ìˆ˜ / 1ë‹¬(30ì¼)
 **/
-
-
-
-
-/**
--- ÀÔ»çÀÏ·ÎºÎÅÍ ¿À´Ã±îÁöÀÇ ÀÏ¼ö¸¦ ±¸ÇÏ¿© ÀÌ¸§, ÀÔ»çÀÏ, ±Ù¹«ÀÏ¼ö¸¦ Ãâ·ÂÇÏ¶ó.
--- round(sysdate-hiredate,0) ±Ù¹«ÀÏ¼ö
-**/
-
-
-
-/**
--- ÀÔ»çÀÏÀ» 2012³â 7¿ù 5ÀÏÀÇ ÇüÅÂ·Î ÀÌ¸§, ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ¶ó.
--- ³¯Â¥ Çü½Ã ¾Õ¿¡ fm Àº ¼±Çà '0'À» Ç¥ÇöÇÏÁö ¾Ê´Â´Ù´Â ¶æ.. 
--- 'fmYYYY"³â" MM"¿ù" DD"ÀÏ' 
-**/
+SELECT
+EMPLOYEE_ID, CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME",
+HIRE_DATE,
+SYSDATE "TODAY",
+FLOOR(SYSDATE - HIRE_DATE) "WORKING DAYS",
+-- ë°©ë²•1 ë¬¸ì œê°€ ìš”êµ¬í•œ ë°©ë²•
+TO_NUMBER(TO_CHAR(SYSDATE, 'YYYY')) - TO_NUMBER(TO_CHAR(HIRE_DATE, 'YYYY')) "WORKING YEARS",
+-- ë°©ë²•2, ê·¼ë¬´ ë‹¬ìˆ˜ë¥¼ êµ¬í•˜ê³  12ë¡œ ë‚˜ëˆˆ í›„ ë‚´ë¦¼
+-- TRUNC(MONTHS_BETWEEN(SYSDATE, HIRE_DATE) / 12, 0) "WORKING YEARS2",
+FLOOR((SYSDATE - HIRE_DATE) / 30) "WORKING MONTHS"
+FROM EMPLOYEES e;
 
 
 
 /**
--- ÀÌ¸§(first_name)ÀÇ ±ÛÀÚ¼ö°¡ 6ÀÚÀÌ»óÀÎ »ç¶÷ÀÇ ÀÌ¸§À» ¾Õ¿¡¼­ 3ÀÚ¸¸ ±¸ÇÏ¿© ¼Ò¹®ÀÚ·Î ÀÌ¸§¸¸À» Ãâ·ÂÇÏ¶ó.
--- substr(str, position, length) : str ¹®ÀÚ¸¦ positin ºÎÅÍ length±æÀÌ ¸¸Å­ Ç¥Çö
--- lower(str)  ¼Ò¹®ÀÚ º¯È¯
--- length(str)  strÀÇ ±æÀÌ
+-- ìž…ì‚¬ì¼ë¡œë¶€í„° ì˜¤ëŠ˜ê¹Œì§€ì˜ ì¼ìˆ˜ë¥¼ êµ¬í•˜ì—¬ ì´ë¦„, ìž…ì‚¬ì¼, ê·¼ë¬´ì¼ìˆ˜ë¥¼ ì¶œë ¥í•˜ë¼.
+-- round(sysdate-hiredate,0) ê·¼ë¬´ì¼ìˆ˜
 **/
+SELECT
+CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME",
+HIRE_DATE,
+ROUND(SYSDATE - HIRE_DATE, 0) "WORKING DAYS"
+FROM EMPLOYEES e;
 
 
-
--- 10¹ø ºÎ¼­ ¿ù±ÞÀÇ Æò±Õ¤Ñ ÃÖ°í, ÃÖÀú, ÀÎ¿ø¼ö¸¦ ±¸ÇÏ¿© Ãâ·ÂÇÏ¶ó
-
-
--- °¢ ºÎ¼­º° ±Þ¿©ÀÇ Æò±Õ, ÃÖ°í, ÃÖÀú, ÀÎ¿ø¼ö¸¦ ±¸ÇÏ¿© Ãâ·ÂÇÏ¶ó.
-
-
--- °¢ ºÎ¼­º° °°Àº ¾÷¹«¸¦ ÇÏ´Â »ç¶÷ÀÇ ÀÎ¿ø¼ö¸¦ ±¸ÇÏ¿© ºÎ¼­¹øÈ£, ¾÷¹«¸í, ÀÎ¿ø¼ö¸¦ Ãâ·ÂÇÏ¶ó.
-
-
--- °°Àº ¾÷¹«¸¦ ÇÏ´Â »ç¶÷ÀÇ ¼ö°¡ 4¸í ÀÌ»óÀÎ ¾÷¹«¿Í ÀÎ¿ø¼ö¸¦ Ãâ·ÂÇÏ¶ó.
+/**
+-- ìž…ì‚¬ì¼ì„ 2012ë…„ 7ì›” 5ì¼ì˜ í˜•íƒœë¡œ ì´ë¦„, ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ë¼.
+-- ë‚ ì§œ í˜•ì‹œ ì•žì— fm ì€ ì„ í–‰ '0'ì„ í‘œí˜„í•˜ì§€ ì•ŠëŠ”ë‹¤ëŠ” ëœ».. 
+-- 'fmYYYY"ë…„" MM"ì›”" DD"ì¼' 
+**/
+SELECT
+TO_CHAR(HIRE_DATE, 'fmYYYY"ë…„" MM"ì›”" DD"ì¼"') "HIRE_DATE",
+CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME"
+FROM EMPLOYEES e;
 
 
--- °¢ ºÎ¼­º° Æò±Õ¿ù±Þ, ÀüÃ¼¿ù±Þ, ÃÖ°í¿ù±Þ, ÃÖÀú¿ù±Þ,À» ±¸ÇÏ¿© Æò±Õ¿ù±ÞÀÌ ¸¹Àº¼øÀ¸·Î Ãâ·ÂÇÏ¶ó.
+/**
+-- ì´ë¦„(first_name)ì˜ ê¸€ìžìˆ˜ê°€ 6ìžì´ìƒì¸ ì‚¬ëžŒì˜ ì´ë¦„ì„ ì•žì—ì„œ 3ìžë§Œ êµ¬í•˜ì—¬ ì†Œë¬¸ìžë¡œ ì´ë¦„ë§Œì„ ì¶œë ¥í•˜ë¼.
+-- substr(str, position, length) : str ë¬¸ìžë¥¼ positin ë¶€í„° lengthê¸¸ì´ ë§Œí¼ í‘œí˜„
+-- lower(str)  ì†Œë¬¸ìž ë³€í™˜
+-- length(str)  strì˜ ê¸¸ì´
+**/
+SELECT LOWER(SUBSTR(FIRST_NAME, 1, 3))
+FROM EMPLOYEES e
+WHERE LENGTH(FIRST_NAME) >= 6;
 
+
+-- 10ë²ˆ ë¶€ì„œ ì›”ê¸‰ì˜ í‰ê· ã…¡ ìµœê³ , ìµœì €, ì¸ì›ìˆ˜ë¥¼ êµ¬í•˜ì—¬ ì¶œë ¥í•˜ë¼
+SELECT ROUND(AVG(SALARY), 0), MAX(SALARY), COUNT(*) 
+FROM EMPLOYEES e
+WHERE DEPARTMENT_ID = 10;
+
+
+-- ê° ë¶€ì„œë³„ ê¸‰ì—¬ì˜ í‰ê· , ìµœê³ , ìµœì €, ì¸ì›ìˆ˜ë¥¼ êµ¬í•˜ì—¬ ì¶œë ¥í•˜ë¼.
+SELECT ROUND(AVG(SALARY), 0), MIN(SALARY), MAX(SALARY), COUNT(*) 
+FROM EMPLOYEES e
+GROUP BY DEPARTMENT_ID;
+
+
+-- ê° ë¶€ì„œë³„ ê°™ì€ ì—…ë¬´ë¥¼ í•˜ëŠ” ì‚¬ëžŒì˜ ì¸ì›ìˆ˜ë¥¼ êµ¬í•˜ì—¬ ë¶€ì„œë²ˆí˜¸, ì—…ë¬´ëª…, ì¸ì›ìˆ˜ë¥¼ ì¶œë ¥í•˜ë¼.
+SELECT DEPARTMENT_ID, JOB_ID, COUNT(*) 
+FROM EMPLOYEES e
+GROUP BY DEPARTMENT_ID, JOB_ID 
+ORDER BY DEPARTMENT_ID
+
+
+-- ê°™ì€ ì—…ë¬´ë¥¼ í•˜ëŠ” ì‚¬ëžŒì˜ ìˆ˜ê°€ 4ëª… ì´ìƒì¸ ì—…ë¬´ì™€ ì¸ì›ìˆ˜ë¥¼ ì¶œë ¥í•˜ë¼.
+SELECT JOB_ID, COUNT(*)
+FROM EMPLOYEES e
+GROUP BY JOB_ID
+HAVING COUNT(*) >= 4; 
+
+
+-- ê° ë¶€ì„œë³„ í‰ê· ì›”ê¸‰, ì „ì²´ì›”ê¸‰, ìµœê³ ì›”ê¸‰, ìµœì €ì›”ê¸‰,ì„ êµ¬í•˜ì—¬ í‰ê· ì›”ê¸‰ì´ ë§Žì€ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ë¼.
+SELECT ROUND(AVG(SALARY), 0), SUM(SALARY), MAX(SALARY), MIN(SALARY)
+FROM EMPLOYEES e
+GROUP BY DEPARTMENT_ID 
+ORDER BY MAX(SALARY) DESC

@@ -25,76 +25,98 @@
 **/
 
 /**
-50¹ø ºÎ¼­ ¿ù±ÞÀÇ Æò±Õ¤Ñ ÃÖ°í, ÃÖÀú, ÀÎ¿ø¼ö¸¦ ±¸ÇÏ¿© Ãâ·ÂÇÏ¶ó
+50ë²ˆ ë¶€ì„œ ì›”ê¸‰ì˜ í‰ê· ã…¡ ìµœê³ , ìµœì €, ì¸ì›ìˆ˜ë¥¼ êµ¬í•˜ì—¬ ì¶œë ¥í•˜ë¼
 **/
-
-
-
+SELECT ROUND(AVG(SALARY), 0), MAX(SALARY), MIN(SALARY), COUNT(*)
+FROM EMPLOYEES e 
+WHERE DEPARTMENT_ID = 50;
 
 
 /**
-°¢ ºÎ¼­º° ±Þ¿©ÀÇ Æò±Õ, ÃÖ°í, ÃÖÀú, ÀÎ¿ø¼ö¸¦ ±¸ÇÏ¿© Ãâ·ÂÇÏ¶ó.
+ê° ë¶€ì„œë³„ ê¸‰ì—¬ì˜ í‰ê· , ìµœê³ , ìµœì €, ì¸ì›ìˆ˜ë¥¼ êµ¬í•˜ì—¬ ì¶œë ¥í•˜ë¼.
 **/
-
-
-
-
+SELECT ROUND(AVG(SALARY), 0), MAX(SALARY), MIN(SALARY), COUNT(*)
+FROM EMPLOYEES e 
+GROUP BY DEPARTMENT_ID;
 
 
 /**
-°¢ ºÎ¼­º° °°Àº ¾÷¹«¸¦ ÇÏ´Â »ç¶÷ÀÇ ÀÎ¿ø¼ö¸¦ ±¸ÇÏ¿© ºÎ¼­¹øÈ£, ¾÷¹«¸í, ÀÎ¿ø¼ö¸¦ Ãâ·ÂÇÏ¶ó.
+ê° ë¶€ì„œë³„ ê°™ì€ ì—…ë¬´ë¥¼ í•˜ëŠ” ì‚¬ëžŒì˜ ì¸ì›ìˆ˜ë¥¼ êµ¬í•˜ì—¬ ë¶€ì„œë²ˆí˜¸, ì—…ë¬´ëª…, ì¸ì›ìˆ˜ë¥¼ ì¶œë ¥í•˜ë¼.
 **/
-
-
-
+SELECT DEPARTMENT_ID, JOB_ID, COUNT(*) 
+FROM EMPLOYEES e
+GROUP BY DEPARTMENT_ID, JOB_ID 
+ORDER BY DEPARTMENT_ID
 
 
 /**
-°°Àº ¾÷¹«¸¦ ÇÏ´Â »ç¶÷ÀÇ ¼ö°¡ 4¸í ÀÌ»óÀÎ ¾÷¹«¿Í ÀÎ¿ø¼ö¸¦ Ãâ·ÂÇÏ¶ó.
+ê°™ì€ ì—…ë¬´ë¥¼ í•˜ëŠ” ì‚¬ëžŒì˜ ìˆ˜ê°€ 4ëª… ì´ìƒì¸ ì—…ë¬´ì™€ ì¸ì›ìˆ˜ë¥¼ ì¶œë ¥í•˜ë¼.
 **/
-
-
-
+SELECT JOB_ID, COUNT(*)
+FROM EMPLOYEES e
+GROUP BY JOB_ID
+HAVING COUNT(*) >= 4; 
 
 
 /**
-°¢ ºÎ¼­º° Æò±Õ¿ù±Þ, ÀüÃ¼¿ù±Þ, ÃÖ°í¿ù±Þ, ÃÖÀú¿ù±Þ,À» ±¸ÇÏ¿© Æò±Õ¿ù±ÞÀÌ ¸¹Àº¼øÀ¸·Î Ãâ·ÂÇÏ¶ó.
+ê° ë¶€ì„œë³„ í‰ê· ì›”ê¸‰, ì „ì²´ì›”ê¸‰, ìµœê³ ì›”ê¸‰, ìµœì €ì›”ê¸‰,ì„ êµ¬í•˜ì—¬ í‰ê· ì›”ê¸‰ì´ ë§Žì€ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ë¼.
 **/
+SELECT ROUND(AVG(SALARY), 0), SUM(SALARY), MAX(SALARY), MIN(SALARY)
+FROM EMPLOYEES e
+GROUP BY DEPARTMENT_ID 
+ORDER BY MAX(SALARY) DESC
 
 
 /**
- ºÎ¼­¹øÈ£, ºÎ¼­¸í, ÀÌ¸§, ±Þ¿©¸¦ Ãâ·ÂÇÏ¶ó.
+ ë¶€ì„œë²ˆí˜¸, ë¶€ì„œëª…, ì´ë¦„, ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ë¼.
 **/
+SELECT e.DEPARTMENT_ID, d.DEPARTMENT_NAME, CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", e.SALARY
+FROM DEPARTMENTS d, EMPLOYEES e
+WHERE e.DEPARTMENT_ID = d.DEPARTMENT_ID
 
 
 /**
-ÀÌ¸§ÀÌ adamÀÎ »ç¿øÀÇ ºÎ¼­¸íÀ» Ãâ·ÂÇÏ¶ó.
+ì´ë¦„ì´ adamì¸ ì‚¬ì›ì˜ ë¶€ì„œëª…ì„ ì¶œë ¥í•˜ë¼.
 **/
+SELECT d.DEPARTMENT_ID
+FROM DEPARTMENTS d, EMPLOYEES e 
+WHERE LOWER(e.FIRST_NAME) = 'adam'
+AND d.DEPARTMENT_ID = e.DEPARTMENT_ID;
 
 
 /**
-employeesÅ×ÀÌºí¿¡ ÀÖ´Â employee_id¿Í manager_id¸¦ ÀÌ¿ëÇÏ¿© ¼­·ÎÀÇ °ü°è¸¦ ´ÙÀ½°ú °°ÀÌ Ãâ·ÂÇÏ¶ó
-'smith'ÀÇ ¸Å´ÏÀú´Â 'ford'ÀÌ´Ù.
+employeesí…Œì´ë¸”ì— ìžˆëŠ” employee_idì™€ manager_idë¥¼ ì´ìš©í•˜ì—¬ ì„œë¡œì˜ ê´€ê³„ë¥¼ ë‹¤ìŒê³¼ ê°™ì´ ì¶œë ¥í•˜ë¼
+'smith'ì˜ ë§¤ë‹ˆì €ëŠ” 'ford'ì´ë‹¤.
 **/
-
+-- SELECT e1.FIRST_NAME ||'ì˜ ë§¤ë‹ˆì €ëŠ” '||e2.FIRST_NAME ||'ì´ë‹¤.'
+SELECT CONCAT(CONCAT(CONCAT(e1.FIRST_NAME, 'ì˜ ë§¤ë‹ˆì €ëŠ” '), e2.FIRST_NAME), 'ì´ë‹¤.') "ë§¤ë‹ˆì €"
+FROM EMPLOYEES e1, EMPLOYEES e2
+WHERE e1.MANAGER_ID = e2.EMPLOYEE_ID;
 
 
 /**
-adamÀÇ Á÷¹«¿Í °°Àº Á÷¹«¸¦ °®´Â »ç¶÷ÀÇ ÀÌ¸§, ºÎ¼­¸í, ±Þ¿©, Á÷¹«¸¦ Ãâ·ÂÇÏ¶ó.
+adamì˜ ì§ë¬´ì™€ ê°™ì€ ì§ë¬´ë¥¼ ê°–ëŠ” ì‚¬ëžŒì˜ ì´ë¦„, ë¶€ì„œëª…, ê¸‰ì—¬, ì§ë¬´ë¥¼ ì¶œë ¥í•˜ë¼.
 **/
+SELECT CONCAT(CONCAT(FIRST_NAME, ' '), LAST_NAME) "FULL_NAME", DEPARTMENT_ID, SALARY, JOB_ID 
+FROM EMPLOYEES e
+WHERE JOB_ID IN
+(SELECT JOB_ID FROM EMPLOYEES e2 WHERE lower(FIRST_NAME) = 'adam');
 
 
 /**
-ÀüÃ¼ »ç¿øÀÇ Æò±Õ ÀÓ±Ýº¸´Ù ¸¹Àº »ç¿øÀÇ »ç¿ø¹øÈ£, ÀÌ¸§, ºÎ¼­¸í, ÀÔ»çÀÏ, Áö¿ª, ±Þ¿©¸¦ Ãâ·ÂÇÏ¶ó.
+50ë²ˆ ë¶€ì„œì‚¬ëžŒë“¤ ì¤‘ì—ì„œ 30ë²ˆ ë¶€ì„œì˜ ì‚¬ì›ê³¼ ê°™ì€ ì—…ë¬´ë¥¼ í•˜ëŠ” ì‚¬ì›ì˜ ì‚¬ì›ë²ˆí˜¸, ì´ë¦„, ë¶€ì„œëª…, ìž…ì‚¬ì¼ì„ ì¶œë ¥í•˜ë¼.
 **/
+SELECT e.EMPLOYEE_ID, CONCAT(CONCAT(e.FIRST_NAME, ' '), e.LAST_NAME) "FULL_NAME", e.DEPARTMENT_ID, e.HIRE_DATE
+FROM EMPLOYEES e, EMPLOYEES e2
+WHERE e.DEPARTMENT_ID = 50
+AND e2.JOB_ID IN
+(SELECT JOB_ID FROM EMPLOYEES e3 WHERE DEPARTMENT_ID=20)
 
 
 /**
-50¹ø ºÎ¼­»ç¶÷µé Áß¿¡¼­ 30¹ø ºÎ¼­ÀÇ »ç¿ø°ú °°Àº ¾÷¹«¸¦ ÇÏ´Â »ç¿øÀÇ »ç¿ø¹øÈ£, ÀÌ¸§, ºÎ¼­¸í, ÀÔ»çÀÏÀ» Ãâ·ÂÇÏ¶ó.
+ê¸‰ì—¬ê°€ 30ë²ˆ ë¶€ì„œì˜ ìµœê³  ê¸‰ì—¬ë³´ë‹¤ ë†’ì€ ì‚¬ì›ì˜ ì‚¬ì›ë²ˆí˜¸, ì´ë¦„, ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ë¼.
 **/
-
-
-
-/**
-±Þ¿©°¡ 30¹ø ºÎ¼­ÀÇ ÃÖ°í ±Þ¿©º¸´Ù ³ôÀº »ç¿øÀÇ »ç¿ø¹øÈ£, ÀÌ¸§, ±Þ¿©¸¦ Ãâ·ÂÇÏ¶ó.
-**/
+SELECT e.EMPLOYEE_ID, CONCAT(CONCAT(e.FIRST_NAME, ' '), e.LAST_NAME) "FULL_NAME", e.SALARY
+FROM EMPLOYEES e
+WHERE e.SALARY > ANY
+(SELECT MAX(SALARY) FROM EMPLOYEES WHERE DEPARTMENT_ID=30)
