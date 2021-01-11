@@ -1,6 +1,8 @@
 # Web
 
-- 2021-01-04 ~ 
+- 2021-01-04 ~ 2021-01-22
+
+정리한 레파지토리 -> [https://github.com/wansang93/Web](https://github.com/wansang93/Web)
 
 ## 수업 내용
 
@@ -9,3 +11,8 @@
 - [[day03] 210106](./summary/210106.md): JavaScript(class와 object 설명, string과 array 함수들, event 처리)
 - [[day04] 210107](./summary/210107.md): JavaScript(todolist 만들기), jQuery, SQL
 - [[day05] 210108](./summary/210108.md): SQL, Oracle DB 맛보기
+- [[day06] 210111](./summary/210111.md): 
+- [[day07] 210112](./summary/210112.md): 
+- [[day08] 210113](./summary/210113.md): 
+- [[day09] 210114](./summary/210114.md): 
+- [[day10] 210115](./summary/210115.md): 
