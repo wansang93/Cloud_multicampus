@@ -13,6 +13,6 @@
 - [[day05] 210108](./summary/210108.md): SQL, Oracle 설치, DB 문제풀기
 - [[day06] 210111](./summary/210111.md): Python(command, type, operator, string, dictionary, identifier)
 - [[day07] 210112](./summary/210112.md): Python(function, fileIO, exception)
-- [[day08] 210113](./summary/210113.md): 
+- [[day08] 210113](./summary/210113.md): Python(class, package), MVC framework, Internet, Protocol
 - [[day09] 210114](./summary/210114.md): 
 - [[day10] 210115](./summary/210115.md): 
