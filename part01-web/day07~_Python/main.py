@@ -1,8 +1,8 @@
-import todoMgrSystem.controller.start
+from todoMgrSystem.controller import system_controller
 
 
 if __name__ == "__main__":
-    todoMgrSystem.controller.start.start_app()
+    system_controller.start_app()
 
 
 # # todos = [{"todo_num": 1, "title": title}]

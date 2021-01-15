@@ -10,4 +10,9 @@ class TodoController():
     
     # service = TodoService()
 
-    pass
+    def __init__(self):
+        print("Todo 컨트롤러 생성")
+
+
+    def register(todo_object):
+        pass
