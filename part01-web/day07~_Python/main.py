@@ -15,10 +15,11 @@ if __name__ == "__main__":
 #       |-- main.py
 #       |--view(뷰)
 #            |-- view.py(menu_display, input_display, list_display, ...)
-#       |--entity(모델 생성)
+#       |--entity(프론트단의 모델 정의 + , 객체화)
 #            |-- todo.py(class Todo)
 #       |--controller(컨트롤러)
-#            |-- todo_contoller.py(class TodoController)
+#            |-- system_contoller.py(시스템 컨트롤러)
+#            |-- todo_contoller.py(class TodoController)(todo 컨트롤러)
 #       |--service(모델 관리)
 #            |--todo_service.py(class TodoService)
 #       |--dao(파일 입출력)

@@ -1,7 +1,7 @@
 from entity.student import Student
 
 #menu display
-def menu_dispay():
+def menu_display():
     print("====== Cloud MSA 반 수강생 관리 시스템 ======")
     print("1.수강생 정보 등록")
     print("2.수강생 목록 보기")

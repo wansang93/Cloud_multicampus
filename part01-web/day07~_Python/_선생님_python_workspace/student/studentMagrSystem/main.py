@@ -1,5 +1,5 @@
 from controller_view.student_controller import StudentController
-from view_template.template_view import menu_dispay, menu_select, message_display
+from view_template.template_view import menu_display, menu_select, message_display
 from view_template.template_view import input_display, update_display,delete_display
 
 
@@ -8,7 +8,7 @@ controller = StudentController()
 
 controller.file_read()
 while True:
-    menu_dispay()
+    menu_display()
 
     menu = menu_select()
     if menu =="1" :

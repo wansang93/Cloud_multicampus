@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo_list</title>
+    <!-- Boot strap -->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static index.css %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="page-header">
+                <h1>To-do List <small>with Django</small></h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="messageDiv">
+                <form action="./create_todo/" method="POST">{% csrf_token %}
+                    <div class="input-group">
+                        <input id="todoContent" name="todoContent" type="text" class="form-control"
+                            placeholder="메모할 내용을 적어주세요">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">memo</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="toDoDiv">
+                <ul class="list-group">
+                    {% for todo in todos %}
+                    {% if todo.is_done == False %}
+                    <form action="./done_todo/" method="GET">
+                        <div class="input-group" name='todo1'>
+                            <li class="list-group-item">{{ todo.content }}</li>
+                            <input type="hidden" id="todoNum" name="todoNum" value="{{ todo.id }}"></input>
+                            <span class="input-group-addon">
+                                <button type="submit" class="custom-btn btn btn-danger">finish</button>
+                            </span>
+                        </div>
+                    </form>
+                    {% else %}
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="toDoDiv">
+                <ul class="list-group">
+                    <div class="page-header">
+                        <h1>Finished</small></h1>
+                    </div>
+                    {% for todo in todos %}
+                    {% if todo.is_done == True %}
+                    <form action="./delete_todo/" method="GET">
+                        <div class="input-group" name='todo1'>
+                            <li class="list-group-item">{{ todo.content }}</li>
+                            <input type="hidden" id="todoNum" name="todoNum" value="{{ todo.id }}"></input>
+                            <span class="input-group-addon">
+                                <button type="submit" class="custom-btn btn btn-danger">delete</button>
+                            </span>
+                        </div>
+                    </form>
+                    {% else %}
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

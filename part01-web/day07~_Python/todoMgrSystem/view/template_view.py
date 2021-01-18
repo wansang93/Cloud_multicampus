@@ -1,4 +1,4 @@
-import todoMgrSystem.entity
+from todoMgrSystem import entity
 
 """
 Define View
@@ -38,7 +38,7 @@ def display_register():
     while not todo_num.isdecimal():
         print("번호는 숫자로 입력해 주세요.")
     todo_what = input("할 일: ")
-    return todoMgrSystem.entity.Todo(todo_num, todo_what)
+    return entity.Todo(todo_num, todo_what)
     
 
 # 메뉴2. 보여주기(Read)
