@@ -56,5 +56,5 @@ while True:
         print()
         print("1,2,3,4,0 번 중 선택하세요" )
 #github : python_workshop repository생성  - 01.todos.py 작성해보기 
-#                                          {"todoNum":todoNum, "title":title}데이터 
+#                                          {"todoid":todoid, "title":title}데이터 
 #                                          등록, 수정, 삭제, 일정목록, 전체삭제 기능

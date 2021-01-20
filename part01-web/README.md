@@ -18,6 +18,6 @@
 - [[day10] 21-01-15](./summary/210115.md): Python, HTTP 프로토콜, Django 설치 및 실행
 - [[day11] 21-01-18](./summary/210118.md): Django todo_list Project
 - [[day12] 21-01-19](./summary/210119.md): Django todo_list Project
-- [[day13] 21-01-20](./summary/210120.md): 
+- [[day13] 21-01-20](./summary/210120.md): 프로젝트 준비하기
 - [[day14] 21-01-21](./summary/210121.md): 
 - [[day15] 21-01-22](./summary/210122.md): 

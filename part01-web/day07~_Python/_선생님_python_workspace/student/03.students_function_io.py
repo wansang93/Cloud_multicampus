@@ -115,7 +115,7 @@ while True:
         print()
         message_display("1,2,3,4,0 번 중 선택하세요" )
 #github : python_workshop repository  - 02.todos_fileio.py 작성해보기 
-#                                          {"todoNum":todoNum, "title":title}데이터 
+#                                          {"todoid":todoid, "title":title}데이터 
 #                                          등록, 수정, 삭제, 일정목록, 전체삭제 기능, dispaly 모듈화
 #                                          종료시 todos.dat에 저장
 #                                          시작시 todos.dat 파일 읽어서 todos list에 초기화  

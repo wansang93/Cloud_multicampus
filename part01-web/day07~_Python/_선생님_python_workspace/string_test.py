@@ -7,9 +7,9 @@ print(hello.upper())
 print(hello.lower())
 print(hello.strip())
 
-num_string=input("숫자 입력 : ")
-print("{0} 이 숫자인가? {1} ".format(num_string, num_string.isdecimal()))
-if num_string.isdecimal(): num1 = 10+int(num_string)
+id_string=input("숫자 입력 : ")
+print("{0} 이 숫자인가? {1} ".format(id_string, id_string.isdecimal()))
+if id_string.isdecimal(): id1 = 10+int(id_string)
 
 print("'l'문자열 검색 ", hello.find("l")) # 검색한 문자열 first index return
 print("'l'문자열 검색 ", hello.rfind("l")) #검색한 문자열 last index return

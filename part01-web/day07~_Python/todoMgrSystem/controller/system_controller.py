@@ -1,56 +1,67 @@
-from todoMgrSystem.view import template_view
-from todoMgrSystem.controller import todo_controller
+from view import system_view, menu_view
+from controller import todo_controller
+from service.todo_service import TodoService
 
 
-# menu 번호 고정값 할당
-REGISTER = "1"
-DISPLAY = "2"
-UPDATE = "3"
-REMOVE = "4"
-REMOVE_ALL = "5"
-
+# MENU 번호
+CREATE = '1'  # Create
+READ = '2'  # Read
+UPDATE = '3'  # Update
+DELETE = '4'  # Delete
+DELETE_ALL = '5'  # Delete All
+EXIT = ['x', 'X']
 
 def start_app():
     # 1. 앱의 시작을 알립니다.
-    template_view.display_start_app()
-    # TODO: 2. 파일을 연결합니다.
-    # 3. 모델을 불러옵니다.
+    system_view.display_start_app()
+    # 2. 파일을 연결합니다.
+    TodoService.read_file()
+    # 3. todo 컨트롤러를 불러옵니다.
     controller = todo_controller.TodoController()
     # 4. 메인 컨트롤러의 무한 루프를 들고 옵니다.
-    loop(controller)
-
-
-def loop(controller):
     while True:
-        template_view.display_menu()
+        menu_view.display_menu()
         
-        menu = template_view.select_menu()
-        
-        if menu == REGISTER:  # 등록
-            todo_object = template_view.display_register()
-            controller.register(todo_object)
-        elif menu == DISPLAY:  # 보기
-            pass
-        elif menu == UPDATE:  # 수정
-            pass
-        elif menu == REMOVE:  # 삭제
-            pass
-        elif menu == REMOVE_ALL:  # 삭제
-            pass
-        else:
-            # menu 가 x(종료)일 경우 종료
-            if is_button_x(menu):
-                # 앱의 종료를 알립니다.
-                template_view.display_exit_app()
+        menu = menu_view.select_menu()
+
+        # 1. Create
+        if menu == CREATE:
+            todo_obj = menu_view.display_register()
+            controller.register(todo_obj)
+        # 2. Read
+        elif menu == READ:
+            controller.display_all_todos()
+        # 3. Update
+        elif menu == UPDATE:
+            check_id = menu_view.check_id_for_update()
+            # check_id
+            index = controller.check_id_for_update(check_id)
+            # if valid_id then get what to do
+            if index != -1:
+                what = menu_view.get_what_for_update()
+                controller.update(index, what)
+        # 4. Delete
+        elif menu == DELETE:
+            check_id = menu_view.check_id_for_delete()
+            # check_id
+            index = controller.check_id_for_delete(check_id)
+            # if valid_id then delete
+            if index != -1:
+                controller.delete(index)
+        # 5. Delete All
+        elif menu == DELETE_ALL:
+            if menu_view.delete_all() in ['y', 'Y']:
+                controller.display_all_todos()
+                controller.delete_all()
+        # Exit
+        elif menu in EXIT:
+            # ask save
+            if system_view.ask_save() in ['y', 'Y']:
+                TodoService.save_file()
+            # ask exit
+            if system_view.ask_exit_app() in ['y', 'Y']:
                 break
-            # x(종료)가 아닐 경우 다시 입력
-            else:
-                # 
-                template_view.display_reinput()
-
-
-def is_button_x(x):
-    if x in ["x", "X"]:
-        return True
-    else:
-        return False
+        # Typo Error
+        else:
+            # get input again
+            menu_view.display_reinput()

@@ -1,11 +1,11 @@
-from todoMgrSystem.controller import system_controller
+from controller import system_controller
 
 
 if __name__ == "__main__":
     system_controller.start_app()
 
 
-# # todos = [{"todo_num": 1, "title": title}]
+# todos = [{"todo_id": 1, "todo_what": title}]
 # todo_functionio 버전 refactoring
 # todoMgrSystem 폴더 생성
 # view, entity, controller, service, dao, exception package 생성: 폴더생성 __init__.py파일 생성

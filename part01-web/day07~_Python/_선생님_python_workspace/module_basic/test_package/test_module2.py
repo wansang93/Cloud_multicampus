@@ -1,4 +1,4 @@
-def number_input():
+def idber_input():
     x = int(input("가로 길이 : "))
     y = int(input("세로 길이 : "))
     return (x, y)
