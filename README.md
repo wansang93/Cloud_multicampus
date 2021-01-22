@@ -14,11 +14,7 @@
    - [**Git특강 1**(8H)](./part00-special_lecture/201229.md)
    - [**Git특강 2**(8H)](./part00-special_lecture/201230.md)
 1. [**인터페이스 개발 프로젝트(120H)**](./part01-web/README.md)
-   - 블로그 웹사이트 구축 프로젝트
-   - 사용자 관리 및 보안 프레임워크 구축 프로젝트
-
-- **Colud Fundamentals(40H)**
-  - 클라우드 컴퓨팅
+2. [**Colud Fundamentals(40H)**](./part01-web/README.md)
 - **클라우드 인프라(120H)**
   - 클라우드 기술과 DevOps 아키텍쳐
   - 리눅스 네트워크 활용

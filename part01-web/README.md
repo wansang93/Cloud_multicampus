@@ -1,8 +1,18 @@
-# Web
+# Web + Colud Fundamentals
 
-- 2021-01-04 ~ 2021-01-22(15Days, 3weeks)
+- 인터페이스 개발 프로젝트: 2021-01-04 ~ 2021-01-22(15Days, 3weeks)
+- Colud Fundamentals: 2021-01-04 ~ 2021-01-29(5Days, 1week)
 
 더 공부한 레파지토리 -> [https://github.com/wansang93/Web](https://github.com/wansang93/Web)
+
+## 인터페이스 개발 프로젝트(120H)
+
+- 블로그 웹사이트 구축 프로젝트
+- 사용자 관리 및 보안 프레임워크 구축 프로젝트
+
+## Colud Fundamentals(40H)
+
+- 클라우드 컴퓨팅
 
 ## 수업 내용
 
@@ -19,5 +29,13 @@
 - [[day11] 21-01-18](./summary/210118.md): Django todo_list Project
 - [[day12] 21-01-19](./summary/210119.md): Django todo_list Project
 - [[day13] 21-01-20](./summary/210120.md): 프로젝트 준비하기
-- [[day14] 21-01-21](./summary/210121.md): 
-- [[day15] 21-01-22](./summary/210122.md): 
+- [[day14] 21-01-21](./summary/210121.md): 프로젝트: Vanilla JS MOMENTUM
+- [[day15] 21-01-22](./summary/210122.md): 프로젝트: Github Portpolio
+
+---
+
+- [[day01] 21-01-25](./summary/210125.md): 
+- [[day02] 21-01-26](./summary/210126.md): 
+- [[day03] 21-01-27](./summary/210127.md): 
+- [[day04] 21-01-28](./summary/210128.md): 
+- [[day05] 21-01-29](./summary/210129.md): 
