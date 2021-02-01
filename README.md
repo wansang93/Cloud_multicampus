@@ -9,18 +9,10 @@
 
 ## Contents
 
-### 0. **특강**
-- [**취업특강**(8H)](./part00-special_lecture/201228.md)
-- [**Git특강 1**(8H)](./part00-special_lecture/201229.md)
-- [**Git특강 2**(8H)](./part00-special_lecture/201230.md)
+### 0. [**특강**](./part00-special_lecture/README.md)
 ### 1. [**인터페이스 개발 프로젝트(120H)**](./part01-web/README.md)
 ### 2. [**Colud Fundamentals(40H)**](./part01-web/README.md)
-### **클라우드 인프라(120H)**
-- 클라우드 기술과 DevOps 아키텍쳐
-- 리눅스 네트워크 활용
-- 컨테이너 기반 앱 배포를 위한 Docker
-- 컨테이너 오케스트레이션을 위한 Kubernetes
-### **취업특강(16H)**
+### 3. [**클라우드 인프라(120H)**](./part02-cloud_infra/README.md)
 ### **Hybrid 클라우드(144H)**
 - 오픈스택을 이용한 Private 클라우드 구축
 - AWS을 이용한 Public 클라우드 아키텍처 구축
