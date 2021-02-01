@@ -34,8 +34,8 @@
 
 ---
 
-- [[day01] 21-01-25]: 프로젝트: Github Portpolio
-- [[day02] 21-01-26]: 프로젝트: Reversi
-- [[day03] 21-01-27]: 프로젝트: Github Portpolio, Reversi
-- [day04 21-01-28](./summary/asset/210128.pdf): 프로젝트 PPT
-- [day05 21-01-29](./summary/210129.md): Colud Fundamentals PPT
+- [day01] 21-01-25: 프로젝트: Github Portpolio
+- [day02] 21-01-26: 프로젝트: Reversi
+- [day03] 21-01-27: 프로젝트: Github Portpolio, Reversi
+- [day04 21-01-28](./summary/210128.pdf): 프로젝트 PPT
+- [day05 21-01-29](./summary/210129.pdf): Colud Fundamentals PPT
