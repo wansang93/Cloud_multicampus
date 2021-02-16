@@ -1,6 +1,8 @@
 # Cloud Infra
 
-- Colud Infra: 2021-02-01 ~ 2021-01-29(5Days, 3weeks)
+- Colud Infra: 2021-02-01 ~ 2021-02-26(5Days, 3weeks)
+
+더 공부한 레파지토리 -> [https://github.com/wansang93/OS_Cloud](https://github.com/wansang93/OS_Cloud)
 
 ## 요약
 
@@ -11,5 +13,5 @@
 
 ## 수업 내용
 
-- [[day01] 21-02-01](./summary/210201.md): Dev-Ops, Docker install
-- 
+- [Week1 [day01~05] 21-02-01 ~ 05](./summary/210201.md): Dev-Ops, Docker install, Linux Basic, Ubuntu
+- [Week2 [day06~11] 21-02-08 ~ 10, 15, 16, 19](./summary/210208.md): GURU(Hands-On Lab)
