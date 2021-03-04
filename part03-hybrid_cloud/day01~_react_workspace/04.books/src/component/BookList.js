@@ -4,7 +4,7 @@ import BookItem from "./BookItem";
 
 class BookList extends Component {
   render() {
-    const { books, bookSelect } = this.book;
+    const { books, bookSelect } = this.props;
     const listItems = books.map((book) => {
       return <BookItem key={book.ISBN} book={book} bookSelect={bookSelect} />;
     });

@@ -11,7 +11,7 @@ class BookItem extends Component {
 
         <Item.Content>
           <Item.Header as="a">{book.title}</Item.Header>
-          <Item.Meta>{book.price}</Item.Meta>
+          <Item.Meta>$ {book.price}</Item.Meta>
           <Item.Extra>{book.author}</Item.Extra>
         </Item.Content>
       </Item>

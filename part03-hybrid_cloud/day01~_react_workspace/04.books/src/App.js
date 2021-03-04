@@ -23,11 +23,11 @@ class App extends Component {
 
   render() {
     return (
-      <Grid columns={2}>
-        <Grid.Column>
+      <Grid columns={4}>
+        <Grid.Column width={4}>
           <BookList books={this.state.books} bookSelect={this.onBookSelect} />
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column width={4}>
           <BookDetail book={this.state.book} />
         </Grid.Column>
       </Grid>

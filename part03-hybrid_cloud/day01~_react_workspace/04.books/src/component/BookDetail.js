@@ -10,10 +10,10 @@ class BookDetail extends Component {
         <Card.Content>
           <Card.Header>{book.title}</Card.Header>
           <Card.Meta>
-            <span className="date">
+            <div>
               {book.author} &nbsp; {book.publisher}
-            </span>
-            <span className="date">{book.price} </span>
+            </div>
+            <div> $ {book.price} </div>
           </Card.Meta>
           <Card.Description>{book.introduce}</Card.Description>
         </Card.Content>
